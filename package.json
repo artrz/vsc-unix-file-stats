@@ -1,0 +1,129 @@
+{
+  "name": "unix-file-stats",
+  "displayName": "Unix file stats",
+  "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
+  "publisher": "arturock",
+  "icon": "resources/logo.png",
+  "version": "0.1.0",
+  "license": "GPL-3.0",
+  "repository": {
+    "url": "https://github.com/arturock/unix-file-stats"
+  },
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onFileSystem:file"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Unix file stats",
+      "properties": {
+        "fileStats.size.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Displays the file size on the status bar"
+        },
+        "fileStats.size.position": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "enumDescriptions": [
+            "Align to the left",
+            "Align to the right"
+          ],
+          "default": "right",
+          "description": "Sets the position of the file size status item"
+        },
+        "fileStats.size.priority": {
+          "type": "number",
+          "default": 0,
+          "description": "A higher number means nearer to the left"
+        },
+        "fileStats.permissions.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Displays the file permissions on the status bar"
+        },
+        "fileStats.permissions.position": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "enumDescriptions": [
+            "Align to the left",
+            "Align to the right"
+          ],
+          "default": "right",
+          "description": "Sets the position of the file permissions status item"
+        },
+        "fileStats.permissions.priority": {
+          "type": "number",
+          "default": 0,
+          "description": "A higher number means nearer to the left"
+        },
+        "fileStats.permissions.format": {
+          "type": "string",
+          "enum": [
+            "numbers",
+            "letters"
+          ],
+          "enumDescriptions": [
+            "Show permissions as numbers",
+            "Show permissions as letters"
+          ],
+          "default": "letters",
+          "description": "Sets the permissions format"
+        },
+        "fileStats.permissions.warnReadonly": {
+          "type": "boolean",
+          "default": true,
+          "description": "Shows the permissions menu item with a warning background when file in not writeable"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "unix-file-stats.changePermissions",
+        "title": "Change file permissions"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.4",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.50.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vscode/test-electron": "^2.3.6",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.53.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "sudo-prompt": "^9.2.1"
+  }
+}
