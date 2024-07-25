@@ -7,7 +7,7 @@
   "version": "0.1.0",
   "license": "GPL-3.0",
   "repository": {
-    "url": "https://github.com/artrz/code-unix-file-stats"
+    "url": "https://github.com/artrz/vsc-unix-file-stats"
   },
   "engines": {
     "vscode": "^1.50.0"

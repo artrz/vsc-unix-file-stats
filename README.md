@@ -2,7 +2,7 @@
 
 Adds file stats information  to your editor status bar on *nix environments.
 
-![Preview](https://raw.githubusercontent.com/artrz/code-unix-file-stats/main/resources/example.png)
+![Preview](https://raw.githubusercontent.com/artrz/vsc-unix-file-stats/main/resources/example.png)
 
 ## Features
 
