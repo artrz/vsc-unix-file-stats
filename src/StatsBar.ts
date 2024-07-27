@@ -21,7 +21,8 @@ export default class implements vscode.Disposable {
             filePath = textEditor.document.fileName;
             try {
                 stats = statSync(filePath);
-            } catch (e) {
+            }
+            catch (e) {
                 // may happen when focusing an output window
                 console.log(`Unable to get stats for file on path [${filePath}]`);
             }
@@ -33,7 +34,7 @@ export default class implements vscode.Disposable {
             if (this.permissions) {
                 this.permissions.text = this.formatter.permissions(
                     stats.mode,
-                    this.getConfig<string>('permissions.format', '')
+                    this.getConfig<string>('permissions.format', ''),
                 );
             }
 
@@ -65,7 +66,7 @@ export default class implements vscode.Disposable {
     private createPermissionsItem(): vscode.StatusBarItem {
         const item = this.createItem(
             this.getConfig<string>('permissions.position', 'right'),
-            this.getConfig<number>('permissions.priority', 0)
+            this.getConfig<number>('permissions.priority', 0),
         );
 
         item.tooltip = 'Change permissions';
@@ -77,14 +78,14 @@ export default class implements vscode.Disposable {
     private createSizeItem(): vscode.StatusBarItem {
         const item = this.createItem(
             this.getConfig<string>('size.position', 'right'),
-            this.getConfig<number>('size.priority', 0)
+            this.getConfig<number>('size.priority', 0),
         );
 
         return item;
     }
 
     private createItem(position: string, priority: number): vscode.StatusBarItem {
-        const alignment = position === "left"
+        const alignment = position === 'left'
             ? vscode.StatusBarAlignment.Left
             : vscode.StatusBarAlignment.Right;
 
@@ -101,7 +102,7 @@ export default class implements vscode.Disposable {
         this.build();
     }
 
-    public dispose(): any {
+    public dispose(): void {
         this.size && this.size.dispose();
         this.size = undefined;
 
@@ -112,10 +113,10 @@ export default class implements vscode.Disposable {
     private getConfig<T>(key: string, fallback: T): T {
         const value = this.config.get<T>(key);
 
-        return value !== undefined ? value : fallback;
+        return value ?? fallback;
     }
 
     private loadConfig(): void {
-        this.config = vscode.workspace.getConfiguration("fileStats");
+        this.config = vscode.workspace.getConfiguration('fileStats');
     }
 }

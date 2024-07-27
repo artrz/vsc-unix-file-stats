@@ -13,13 +13,14 @@ export default class {
         return format === 'numbers'
             ? numeric
             : this.permissionToChars(parseInt(numeric[0]))
-                + this.permissionToChars(parseInt(numeric[1]))
-                + this.permissionToChars(parseInt(numeric[2]));
+            + this.permissionToChars(parseInt(numeric[1]))
+            + this.permissionToChars(parseInt(numeric[2]));
     }
 
     private permissionToChars(permission: number): string {
         const binary = permission.toString(2);
 
+        // eslint-disable-next-line @typescript-eslint/prefer-string-starts-ends-with
         return (binary[0] === '1' ? 'r' : '-')
             + (binary[1] === '1' ? 'w' : '-')
             + (binary[2] === '1' ? 'x' : '-');
