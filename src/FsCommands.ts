@@ -8,8 +8,7 @@ const permissionsParser = (value: string): string | undefined => {
     }
 
     if (value.length === 9) {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        const map: { [char: string]: number } = { 'r': 4, 'w': 2, 'x': 1, '-': 0 };
+        const map: Record<string, number> = { 'r': 4, 'w': 2, 'x': 1, '-': 0 };
 
         return value.match(/^([r-][w-][x-]){3}$/)
             ? (map[value[0]] + map[value[1]] + map[value[2]]).toString()
@@ -41,7 +40,7 @@ export default class {
 
         const mode = permissionsParser(input);
         if (mode === undefined) {
-            window.showErrorMessage(`Invalid permissions: ${input}`);
+            void window.showErrorMessage(`Invalid permissions: ${input}`);
             return false;
         }
 
@@ -49,7 +48,8 @@ export default class {
             chmodSync(path, mode);
 
             return true;
-        } catch (e) {
+        }
+        catch (e) {
             console.log(e);
 
             return this.retryAsSudo(path, mode);
@@ -57,16 +57,16 @@ export default class {
     }
 
     private async retryAsSudo(path: string, mode: string): Promise<boolean> {
-            const error = "Failed to save '%s': File is read-only. Select 'Execute as Sudo' to retry as superuser.";
-            const sel = await window.showErrorMessage(
-                error.replace('%s', path),
-                { sudo: true, title: 'Execute as Sudo...' },
-                { sudo: false, title: 'Discard', isCloseAffordance: true }
-            );
+        const error = "Failed to save '%s': File is read-only. Select 'Execute as Sudo' to retry as superuser.";
+        const sel = await window.showErrorMessage(
+            error.replace('%s', path),
+            { sudo: true, title: 'Execute as Sudo...' },
+            { sudo: false, title: 'Discard', isCloseAffordance: true },
+        );
 
-            if (!sel || !sel.sudo) {
-                return false;
-            }
+        if (!sel?.sudo) {
+            return false;
+        }
 
         return new Promise<boolean>((resolve, reject) => {
             const cmd = `chmod ${mode} ${path}`;
@@ -74,12 +74,14 @@ export default class {
 
             sudo.exec(cmd, config, (error, stdout, stderr) => {
                 if (error) {
-                    window.showErrorMessage(error.message);
-                    reject(false);
-                } else if (stderr) {
-                    window.showErrorMessage(stderr.toString());
-                    reject(false);
-                } else {
+                    void window.showErrorMessage(error.message);
+                    reject(new Error(error.message));
+                }
+                else if (stderr) {
+                    void window.showErrorMessage(stderr.toString());
+                    reject(new Error(stderr.toString()));
+                }
+                else {
                     resolve(true);
                 }
             });

@@ -16,15 +16,17 @@ export function activate(context: vscode.ExtensionContext) {
     // This line of code will only be executed once when your extension is activated
     console.log('"unix-file-stats" is now active.');
 
-    let changePermissionsCommand = vscode.commands.registerCommand('unix-file-stats.changePermissions', async () => {
-        if (await fsCommands.changePermissions()) {
+    const changePermissionsCommand = vscode.commands.registerCommand('unix-file-stats.changePermissions', async () => {
+        try {
+            await fsCommands.changePermissions();
             statsBar.update(vscode.window.activeTextEditor);
-            vscode.commands.executeCommand('workbench.action.focusFirstEditorGroup');
+            void vscode.commands.executeCommand('workbench.action.focusFirstEditorGroup');
         }
+        catch (error) { /* empty */ }
     });
 
-    const d1 = vscode.window.onDidChangeActiveTextEditor((textEditor: vscode.TextEditor | undefined) => statsBar.update(textEditor));
-    const d3 = vscode.workspace.onDidSaveTextDocument(() => statsBar.update(vscode.window.activeTextEditor));
+    const d1 = vscode.window.onDidChangeActiveTextEditor((textEditor: vscode.TextEditor | undefined) => { statsBar.update(textEditor); });
+    const d3 = vscode.workspace.onDidSaveTextDocument(() => { statsBar.update(vscode.window.activeTextEditor); });
     const d2 = vscode.workspace.onDidChangeConfiguration(() => {
         statsBar.rebuild();
         statsBar.update(vscode.window.activeTextEditor);
