@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Integrate stylistic for consistent styling
+- Integrate commitlint for consistent commit messages
 - Add Lefthook for running pre-commit and pre-push scripts
 
 ### Updated
