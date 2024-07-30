@@ -39,7 +39,7 @@ This repository uses ESLint and [Stylistic](https://eslint.style/) to ensure the
 
 ### Pre-commit
 
-Before committing, eslint will run on staged files. If everything is ok, the commit messages will be linted too using the default conventional configuration. See [commitlint.config.mjs](./commitlint.config.mjs) for a cheat sheet on how to use the types.
+Before committing, eslint will run on staged files. If everything is ok, the commit messages will be linted too using the default conventional configuration. See [commitlint.config.mjs](./commitlint.config.mjs) for a cheat sheet on how to use the types or [https://cheatsheets.zip/conventional-commits](https://cheatsheets.zip/conventional-commits) for a detailed explanation.
 
 ### Pre-push
 

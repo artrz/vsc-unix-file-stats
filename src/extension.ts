@@ -4,16 +4,13 @@ import StatsBar from './StatsBar';
 
 let statsBar: StatsBar;
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+// Called when the extension is activated, which is the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
     const fsCommands = new FsCommands();
 
     statsBar = new StatsBar();
     statsBar.update(vscode.window.activeTextEditor);
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
     console.log('"unix-file-stats" is now active.');
 
     const changePermissionsCommand = vscode.commands.registerCommand('unix-file-stats.changePermissions', async () => {
@@ -35,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(statsBar, d1, d2, d3, changePermissionsCommand);
 }
 
-// This method is called when your extension is deactivated
+// This method is called when the extension is deactivated
 export function deactivate() {
     statsBar.dispose();
 }
