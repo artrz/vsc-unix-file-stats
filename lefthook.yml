@@ -9,10 +9,10 @@ pre-commit:
       glob: "*.{ts}"
       run: npx eslint {staged_files}
 
-commit-msg:
-  scripts:
-    "commitlint.sh":
-      runner: bash
+# commit-msg:
+#   scripts:
+#     "commitlint.sh":
+#       runner: bash
 
 pre-push:
   commands:
