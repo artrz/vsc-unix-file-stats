@@ -1,6 +1,5 @@
 {
     "$schema": "./node_modules/@favware/cliff-jumper/assets/cliff-jumper.schema.json",
-    "githubRepo": "artrz/vsc-unix-file-stats",
     "install": true,
     "name": "vsc-unix-file-stats",
     "packagePath": ".",
