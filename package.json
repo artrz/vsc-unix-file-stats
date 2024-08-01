@@ -4,7 +4,7 @@
   "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
   "publisher": "artrz",
   "icon": "resources/logo.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "GPL-3.0",
   "repository": {
     "url": "https://github.com/artrz/vsc-unix-file-stats"
@@ -111,7 +111,8 @@
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
-    "release": "npx @favware/cliff-jumper"
+    "bump": "npx @favware/cliff-jumper",
+    "release": "git push && git push --tags ; vsce publish ; npm ovsx publish"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

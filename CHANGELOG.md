@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2024-08-01
+
+### Added
+
+- Add lint pr action (#12)
+- Add cliff jumper (#14)
+
+### Changed
+
+- Create dependabot.yml (#5)
+- Bump lefthook from 1.7.9 to 1.7.11 (#10)
+- Bump @typescript-eslint/parser from 7.17.0 to 7.18.0 (#9)
+- Bump typescript-eslint from 7.17.0 to 7.18.0 (#6)
+- Update readme and some comments (#11)
+
+### Removed
+
+- Remove commit linting hook (#13)
+
+[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.0..v0.1.1](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.0..v0.1.1)
+
 ## [v0.1.0] - 2023-11-12
 
 - Initial release
