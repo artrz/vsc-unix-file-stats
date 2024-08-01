@@ -110,10 +110,12 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "release": "npx @favware/cliff-jumper"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@favware/cliff-jumper": "^4.0.3",
     "@stylistic/eslint-plugin": "^2.4.0",
     "@types/eslint__js": "^8.42.3",
     "@types/mocha": "^10.0.7",

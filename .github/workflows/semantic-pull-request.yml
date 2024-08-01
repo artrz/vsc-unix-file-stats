@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # To use with private repos on the free plan (no draft PRs available).
-          wip: true
+          # wip: true
           # Ensure that the subject doesn't start with an uppercase character.
           subjectPattern: ^(?![A-Z]).+$
           subjectPatternError: |
