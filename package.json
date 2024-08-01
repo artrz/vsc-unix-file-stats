@@ -112,16 +112,16 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
     "bump": "npx @favware/cliff-jumper",
-    "release": "git push && git push --tags ; vsce publish ; npm ovsx publish"
+    "release": "git push && git push --tags & vsce publish & npm ovsx publish"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@favware/cliff-jumper": "^4.0.3",
-    "@stylistic/eslint-plugin": "^2.4.0",
+    "@stylistic/eslint-plugin": "^2.6.1",
     "@types/eslint__js": "^8.42.3",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
-    "@types/vscode": "^1.91.0",
+    "@types/vscode": "^1.50.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@vscode/test-cli": "^0.0.10",
