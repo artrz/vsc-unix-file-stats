@@ -2,7 +2,7 @@
   "name": "unix-file-stats",
   "displayName": "Unix File Stats",
   "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
-  "publisher": "artrz",
+  "publisher": "arturock",
   "icon": "resources/logo.png",
   "version": "0.1.1",
   "license": "GPL-3.0",
@@ -18,12 +18,21 @@
   "bugs": {
     "url": "https://github.com/artrz/vscode-gitstash/issues"
   },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "files",
+    "permissions",
+    "stats",
+    "unix",
+    "linux",
+    "multi-root ready"
+  ],
   "engines": {
     "vscode": "^1.50.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [
     "onFileSystem:file"
   ],
