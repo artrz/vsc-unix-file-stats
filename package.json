@@ -16,11 +16,10 @@
     "url": "https://github.com/artrz/vsc-unix-file-stats"
   },
   "bugs": {
-    "url": "https://github.com/artrz/vscode-gitstash/issues"
+    "url": "https://github.com/artrz/vsc-unix-file-stats/issues"
   },
   "categories": [
-    "Other",
-    "SCM Providers"
+    "Other"
   ],
   "keywords": [
     "files",
