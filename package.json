@@ -6,6 +6,10 @@
   "icon": "resources/logo.png",
   "version": "0.1.1",
   "license": "GPL-3.0",
+  "author": {
+    "name": "Arturo Rodríguez",
+    "url": "https://github.com/artrz"
+  },
   "repository": {
     "url": "https://github.com/artrz/vsc-unix-file-stats"
   },
