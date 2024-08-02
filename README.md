@@ -1,8 +1,6 @@
 # unix-file-stats
 
-Adds file stats information  to your editor status bar on *nix environments.
-
-![Preview](https://raw.githubusercontent.com/artrz/vsc-unix-file-stats/main/resources/example.png)
+Adds file stats information in your editor status bar in Unix and Unix-like operating systems. Tested on macOS Sonoma & Debian Sid.
 
 ## Features
 
@@ -10,9 +8,16 @@ Adds file stats information  to your editor status bar on *nix environments.
  - Shows file size
  - Allow to change file permissions (with sudo retry support)
 
-## Requirements
+After installing, the file size and permissions for the current file will appear as a new statusbar item ![Preview](resources/stats_1.png). If file is readonly the indicator will show have warning color background ![Preview](resources/stats_2.png).
 
-A unix like box. Tested on macOS Sonoma & Debian Sid.
+You can change the file permissions by clicking on the corresponding on the added status bar item.
+
+![Preview](resources/change_prompt.png)
+
+If changing permissions require superuser privileges it's possible to try again with sudo.
+
+![Preview](resources/sudo_retry.png)
+![Preview](resources/sudo_prompt.png)
 
 ## Extension Settings
 
@@ -29,7 +34,7 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-See the [changelog](./CHANGELOG.md)
+See the [changelog](./CHANGELOG.md).
 
 ## Contributing
 
@@ -47,4 +52,4 @@ Before pushing, a package audit is going to be performed to verify there are no 
 
 ## License
 
-See the [license](./LICENSE.md)
+See the [license](./LICENSE.md).
