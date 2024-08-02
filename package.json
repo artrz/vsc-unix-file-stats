@@ -10,8 +10,13 @@
     "name": "Arturo Rodríguez",
     "url": "https://github.com/artrz"
   },
+  "homepage": "https://github.com/artrz/vsc-unix-file-stats/blob/master/README.md",
   "repository": {
+    "type": "git",
     "url": "https://github.com/artrz/vsc-unix-file-stats"
+  },
+  "bugs": {
+    "url": "https://github.com/artrz/vscode-gitstash/issues"
   },
   "engines": {
     "vscode": "^1.50.0"
