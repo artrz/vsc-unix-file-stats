@@ -57,7 +57,7 @@ export default class {
     }
 
     private async retryAsSudo(path: string, mode: string): Promise<boolean> {
-        const error = "Failed to save '%s': File is read-only. Select 'Execute as Sudo' to retry as superuser.";
+        const error = "Failed to modify '%s'. Not enough privileges.";
         const sel = await window.showErrorMessage(
             error.replace('%s', path),
             { sudo: true, title: 'Execute as Sudo...' },
