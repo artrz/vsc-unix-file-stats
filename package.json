@@ -129,7 +129,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
     "bump": "npx @favware/cliff-jumper",
-    "release": "git push && git push --tags && vsce publish && npx ovsx publish"
+    "publish": "git push && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
