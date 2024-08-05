@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2024-08-05
+
+### Changed
+
+- Rename script from release to publish
+- Bump @typescript-eslint/eslint-plugin (#20)
+- Bump typescript-eslint from 7.18.0 to 8.0.1 (#21)
+
+[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.4..v0.1.6](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.4..v0.1.6)
+
 ## [0.1.4] - 2024-08-05
 
 ### Changed
