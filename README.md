@@ -1,6 +1,6 @@
 # unix-file-stats
 
-Add file stats information in your editor status bar in Unix and Unix-like operating systems. Tested on macOS Sonoma & Debian Sid.
+Add file stats information in your editor status bar in Unix and Unix-like operating systems (tested on macOS Sonoma & Debian Sid).
 
 ## Features
 
@@ -8,9 +8,9 @@ Add file stats information in your editor status bar in Unix and Unix-like opera
  - Shows file size
  - Allow to change file permissions (with sudo retry support)
 
-After installing, the file size and permissions for the current file will appear as a new statusbar item ![Preview](resources/stats_1.png). If file is readonly the indicator will have a warning color background ![Preview](resources/stats_2.png).
+After installing, the file size and permissions for the current file will appear as a new statusbar item ![Preview](resources/stats_1.png). If file is readonly, the item background will change ![Preview](resources/stats_2.png).
 
-You can change the file permissions by clicking on the status bar item.
+You can change the file permissions by clicking on the status item.
 
 ![Preview](resources/change_prompt.png)
 
