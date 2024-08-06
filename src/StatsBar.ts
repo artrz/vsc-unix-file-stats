@@ -22,14 +22,16 @@ export default class implements vscode.Disposable {
             try {
                 stats = statSync(filePath);
             }
-            catch (e) {
+            catch {
                 // may happen when focusing an output window
                 console.log(`Unable to get stats for file on path [${filePath}]`);
             }
         }
 
         if (filePath && stats) {
-            this.size && (this.size.text = this.formatter.size(stats.size));
+            if (this.size) {
+                this.size.text = this.formatter.size(stats.size);
+            }
 
             if (this.permissions) {
                 this.permissions.text = this.formatter.permissions(
@@ -49,8 +51,12 @@ export default class implements vscode.Disposable {
             }
         }
         else {
-            this.size && (this.size.text = '');
-            this.permissions && (this.permissions.text = '');
+            if (this.size) {
+                this.size.text = '';
+            }
+            if (this.permissions) {
+                this.permissions.text = '';
+            }
         }
     }
 
@@ -103,10 +109,15 @@ export default class implements vscode.Disposable {
     }
 
     public dispose(): void {
-        this.size && this.size.dispose();
-        this.size = undefined;
+        if (this.size) {
+            this.size.dispose();
+        }
 
-        this.permissions && this.permissions.dispose();
+        if (this.permissions) {
+            this.permissions.dispose();
+        }
+
+        this.size = undefined;
         this.permissions = undefined;
     }
 
