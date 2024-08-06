@@ -4,7 +4,7 @@
   "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
   "publisher": "arturock",
   "icon": "resources/logo.png",
-  "version": "0.1.6",
+  "version": "0.1.4",
   "license": "GPL-3.0",
   "author": {
     "name": "Arturo Rodríguez",
@@ -128,7 +128,7 @@
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
-    "bump": "npx @favware/cliff-jumper",
+    "bump": "npm run lint && npx @favware/cliff-jumper",
     "publish": "git push && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {

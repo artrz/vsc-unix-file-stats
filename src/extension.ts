@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
             statsBar.update(vscode.window.activeTextEditor);
             void vscode.commands.executeCommand('workbench.action.focusFirstEditorGroup');
         }
-        catch (error) { /* empty */ }
+        catch { /* empty */ }
     });
 
     const d1 = vscode.window.onDidChangeActiveTextEditor((textEditor: vscode.TextEditor | undefined) => { statsBar.update(textEditor); });
