@@ -40,7 +40,7 @@ See the [changelog](./CHANGELOG.md).
 
 First of, thanks for your interest in helping out!
 
-This repository uses ESLint and [Stylistic](https://eslint.style/) to ensure the code quality. Lefthook is configured to automatically perform lint asks on pre-commit and pre-push hooks but for this to work you need to execute `npm run prepare` to install the git hooks. Make sure to run the command to enable the hooks in your cloned repo. [Commitlint](https://commitlint.js.org/) is integrated as a github workflow to ensure consistent commit messages on PRs.
+This repository uses ESLint and [Stylistic](https://eslint.style/) to ensure the code quality. Lefthook is configured to automatically perform tasks on pre-commit and pre-push hooks. Execute `npm run prepare` to install the git hooks in your cloned repo. [Commitlint](https://commitlint.js.org/) is integrated as a github workflow to ensure consistent commit messages on PRs.
 
 ### Pre-commit
 
