@@ -13,8 +13,8 @@ export default class {
         return format === 'numbers'
             ? numeric
             : this.permissionToChars(parseInt(numeric[0]))
-            + this.permissionToChars(parseInt(numeric[1]))
-            + this.permissionToChars(parseInt(numeric[2]));
+                + this.permissionToChars(parseInt(numeric[1]))
+                + this.permissionToChars(parseInt(numeric[2]));
     }
 
     private permissionToChars(permission: number): string {
