@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.7] - 2024-09-10
+
+### Changed
+
+- Fix vscode types dep
+- Bump typescript-eslint from 8.2.0 to 8.3.0 (#28)
+- Bump @eslint/js from 9.9.0 to 9.9.1 (#27)
+- Bump @stylistic/eslint-plugin from 2.6.4 to 2.7.2 (#26)
+- Bump @typescript-eslint/parser from 8.3.0 to 8.5.0 (#29)
+- Bump @stylistic/eslint-plugin from 2.7.2 to 2.8.0 (#30)
+- Bump @favware/cliff-jumper from 4.0.3 to 4.1.0 (#25)
+- Improve npm scripts
+
+[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.7](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.7)
+
 ## [0.1.6] - 2024-08-20
 
 ### Removed
