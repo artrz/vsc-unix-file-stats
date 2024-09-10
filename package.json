@@ -129,6 +129,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
     "bump": "npm run lint && vsce package && npx @favware/cliff-jumper",
+    "debump": "git reset --soft HEAD~1 ; git tag --delete",
     "publish": "git push && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {
