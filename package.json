@@ -114,7 +114,7 @@
     ]
   },
   "scripts": {
-    "prepare": "lefthook install",
+    "init": "lefthook install",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
@@ -128,7 +128,7 @@
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "test": "vscode-test",
-    "bump": "npm run lint && npx @favware/cliff-jumper",
+    "bump": "npm run lint && vsce package && npx @favware/cliff-jumper",
     "publish": "git push && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {
