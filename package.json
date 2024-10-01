@@ -133,7 +133,7 @@
     "publish": "git push origin main && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.11.1",
     "@favware/cliff-jumper": "^4.1.0",
     "@stylistic/eslint-plugin": "^2.8.0",
     "@types/eslint__js": "^8.42.3",
