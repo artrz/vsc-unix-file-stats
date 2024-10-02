@@ -30,7 +30,7 @@
     "multi-root ready"
   ],
   "engines": {
-    "vscode": "^1.50.0"
+    "vscode": "^1.70.0"
   },
   "activationEvents": [
     "onFileSystem:file"
@@ -139,7 +139,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/mocha": "^10.0.8",
     "@types/node": "22.7.4",
-    "@types/vscode": "1.50.0",
+    "@types/vscode": "1.70.0",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
     "@typescript-eslint/parser": "^8.8.0",
     "@vscode/test-cli": "^0.0.10",
