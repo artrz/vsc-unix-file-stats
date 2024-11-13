@@ -103,6 +103,16 @@
           "type": "boolean",
           "default": true,
           "description": "Shows the permissions menu item with a warning background when file in not writeable"
+        },
+        "fileStats.hints.basenameOnly": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display only the resource's basename when requesting the permissions."
+        },
+        "fileStats.hints.maxNames": {
+          "type": "integer",
+          "default": 5,
+          "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'"
         }
       }
     },
@@ -111,7 +121,22 @@
         "command": "unix-file-stats.changePermissions",
         "title": "Change file permissions"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceScheme == file && !explorerResourceIsFolder",
+          "command": "unix-file-stats.changePermissions",
+          "group": "7_modification@4"
+        }
+      ],
+        "commandPalette": [
+          {
+            "command": "unix-file-stats.changePermissions",
+            "when": "false"
+          }
+        ]
+      }
   },
   "scripts": {
     "init": "lefthook install",

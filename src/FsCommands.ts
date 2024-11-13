@@ -1,58 +1,81 @@
-import { InputBoxOptions, window } from 'vscode';
-import { chmodSync } from 'fs';
+import { InputBoxOptions, window, Uri } from 'vscode';
+import { chmodSync, statSync } from 'fs';
+import path from 'path';
+import config from './config';
+import permissionsParser from './permissionsParser';
+
 import * as sudo from 'sudo-prompt';
 
-const permissionsParser = (value: string): string | undefined => {
-    if (value.length === 3) {
-        return /^[0-7][0-7][0-7]$/.exec(value) ? value : undefined;
-    }
-
-    if (value.length === 9) {
-        const map: Record<string, number> = { 'r': 4, 'w': 2, 'x': 1, '-': 0 };
-
-        return (/^([r-][w-][x-]){3}$/.exec(value))
-            ? (map[value[0]] + map[value[1]] + map[value[2]]).toString()
-            + (map[value[3]] + map[value[4]] + map[value[5]]).toString()
-            + (map[value[6]] + map[value[7]] + map[value[8]]).toString()
-            : undefined;
-    }
-
-    return undefined;
-};
-
 export default class {
-    public async changePermissions(): Promise<boolean | undefined> {
-        if (!window.activeTextEditor) {
-            return undefined;
+    public async changePermissions(selectedItems?: Uri[]): Promise<void> {
+        const paths = [];
+
+        if (selectedItems) {
+            paths.push(...selectedItems
+                .filter((resource) => statSync(resource.fsPath).isFile())
+                .map((resource) => resource.fsPath));
+        }
+        else if (window.activeTextEditor) {
+            paths.push(window.activeTextEditor.document.fileName);
+        }
+        else {
+            return;
         }
 
-        const path = window.activeTextEditor.document.fileName;
+        console.log('Selected files:');
+        console.log(paths);
+
+        const fileOnly = config<boolean>('hints.basenameOnly', true);
+        const maxDisplayed = config<number>('hints.maxNames', 5);
+
+        let selectionHint = '';
+        if (paths.length === 1) {
+            selectionHint = fileOnly ? path.basename(paths[0]) : paths[0];
+        }
+        else {
+            const hints = fileOnly ? paths.map((x) => path.basename(x)) : [...paths];
+
+            if (maxDisplayed < 1) {
+                selectionHint = `${hints.length} selected files`;
+            }
+            else {
+                selectionHint = hints.splice(0, maxDisplayed).join(', ');
+                if (hints.length) { selectionHint += ` and ${hints.length} more`; }
+            }
+        }
+
+        const mode = await this.requestNewPermissions(selectionHint);
+
+        if (mode === undefined) {
+            return;
+        }
+
+        for (const path of paths) {
+            try {
+                chmodSync(path, mode);
+            }
+            catch (e) {
+                console.log(e);
+                void this.retryAsSudo(path, mode);
+            }
+        }
+    }
+
+    private async requestNewPermissions(selectionHint: string): Promise<string | undefined> {
         const boxAttributes: InputBoxOptions = {
             placeHolder: 'E.g. 644 or rw-r--r--',
-            title: `New permissions for ${path}`,
+            title: `New permissions for ${selectionHint}`,
             prompt: '3 digits notation or 9 letters/dash notation',
         };
 
         const input = await window.showInputBox(boxAttributes);
-        if (input === undefined) {
-            return input;
-        }
+        if (input) {
+            const mode = permissionsParser(input);
+            if (!mode) {
+                void window.showErrorMessage(`Invalid permissions: ${input}`);
+            }
 
-        const mode = permissionsParser(input);
-        if (mode === undefined) {
-            void window.showErrorMessage(`Invalid permissions: ${input}`);
-            return false;
-        }
-
-        try {
-            chmodSync(path, mode);
-
-            return true;
-        }
-        catch (e) {
-            console.log(e);
-
-            return this.retryAsSudo(path, mode);
+            return mode;
         }
     }
 

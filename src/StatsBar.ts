@@ -1,16 +1,15 @@
 import * as vscode from 'vscode';
 import { access, constants, statSync } from 'fs';
 import Formatter from './Formatter';
+import config from './config';
 
 export default class implements vscode.Disposable {
-    private config!: vscode.WorkspaceConfiguration;
     private formatter: Formatter;
     private permissions: vscode.StatusBarItem | undefined;
     private size: vscode.StatusBarItem | undefined;
 
     public constructor() {
         this.formatter = new Formatter();
-        this.loadConfig();
         this.build();
     }
 
@@ -36,11 +35,11 @@ export default class implements vscode.Disposable {
             if (this.permissions) {
                 this.permissions.text = this.formatter.permissions(
                     stats.mode,
-                    this.getConfig<string>('permissions.format', ''),
+                    config<string>('permissions.format', ''),
                 );
             }
 
-            if (this.getConfig<boolean>('permissions.warnReadonly', true)) {
+            if (config<boolean>('permissions.warnReadonly', true)) {
                 access(filePath, constants.W_OK, (err) => {
                     if (this.permissions) {
                         this.permissions.backgroundColor = err
@@ -61,18 +60,18 @@ export default class implements vscode.Disposable {
     }
 
     public build(): void {
-        if (this.getConfig<boolean>('permissions.enabled', true)) {
+        if (config<boolean>('permissions.enabled', true)) {
             this.permissions = this.createPermissionsItem();
         }
-        if (this.getConfig<boolean>('size.enabled', true)) {
+        if (config<boolean>('size.enabled', true)) {
             this.size = this.createSizeItem();
         }
     }
 
     private createPermissionsItem(): vscode.StatusBarItem {
         const item = this.createItem(
-            this.getConfig<string>('permissions.position', 'right'),
-            this.getConfig<number>('permissions.priority', 0),
+            config<string>('permissions.position', 'right'),
+            config<number>('permissions.priority', 0),
         );
 
         item.tooltip = 'Change permissions';
@@ -83,8 +82,8 @@ export default class implements vscode.Disposable {
 
     private createSizeItem(): vscode.StatusBarItem {
         const item = this.createItem(
-            this.getConfig<string>('size.position', 'right'),
-            this.getConfig<number>('size.priority', 0),
+            config<string>('size.position', 'right'),
+            config<number>('size.priority', 0),
         );
 
         return item;
@@ -104,7 +103,6 @@ export default class implements vscode.Disposable {
 
     public rebuild(): void {
         this.dispose();
-        this.loadConfig();
         this.build();
     }
 
@@ -119,15 +117,5 @@ export default class implements vscode.Disposable {
 
         this.size = undefined;
         this.permissions = undefined;
-    }
-
-    private getConfig<T>(key: string, fallback: T): T {
-        const value = this.config.get<T>(key);
-
-        return value ?? fallback;
-    }
-
-    private loadConfig(): void {
-        this.config = vscode.workspace.getConfiguration('fileStats');
     }
 }
