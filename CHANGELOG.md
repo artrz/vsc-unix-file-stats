@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2024-11-14
+
+### Changed
+
+- Bump @typescript-eslint/parser from 8.8.0 to 8.12.2 (#40)
+- Bump typescript-eslint from 8.8.0 to 8.13.0 (#41)
+- Bump lefthook from 1.7.18 to 1.8.2 (#38)
+- Bump @favware/cliff-jumper from 4.1.0 to 5.0.0 (#36)
+- Allow to change permissions from the explorer menu (#43)
+
+[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.8..v0.2.0](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.8..v0.2.0)
+
 ## [0.1.8] - 2024-10-02
 
 ### Added
