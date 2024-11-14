@@ -43,7 +43,7 @@
         "fileStats.size.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Displays the file size on the status bar"
+          "description": "Displays the file size on the status bar."
         },
         "fileStats.size.position": {
           "type": "string",
@@ -56,17 +56,17 @@
             "Align to the right"
           ],
           "default": "right",
-          "description": "Sets the position of the file size status item"
+          "description": "Sets the position of the file size status item."
         },
         "fileStats.size.priority": {
           "type": "number",
           "default": 0,
-          "description": "A higher number means nearer to the left"
+          "description": "A higher number means nearer to the left."
         },
         "fileStats.permissions.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Displays the file permissions on the status bar"
+          "description": "Displays the file permissions on the status bar."
         },
         "fileStats.permissions.position": {
           "type": "string",
@@ -79,12 +79,12 @@
             "Align to the right"
           ],
           "default": "right",
-          "description": "Sets the position of the file permissions status item"
+          "description": "Sets the position of the file permissions status item."
         },
         "fileStats.permissions.priority": {
           "type": "number",
           "default": 0,
-          "description": "A higher number means nearer to the left"
+          "description": "A higher number means nearer to the left."
         },
         "fileStats.permissions.format": {
           "type": "string",
@@ -97,22 +97,22 @@
             "Show permissions as letters"
           ],
           "default": "letters",
-          "description": "Sets the permissions format"
+          "description": "Sets the permissions format."
         },
         "fileStats.permissions.warnReadonly": {
           "type": "boolean",
           "default": true,
-          "description": "Shows the permissions menu item with a warning background when file in not writeable"
+          "description": "Shows the permissions menu item with a warning background when file in not writeable."
         },
         "fileStats.hints.basenameOnly": {
           "type": "boolean",
           "default": true,
-          "description": "Display only the resource's basename when requesting the permissions."
+          "description": "Displays only the resource's basename when requesting the permissions."
         },
         "fileStats.hints.maxNames": {
           "type": "integer",
           "default": 5,
-          "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'"
+          "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
         }
       }
     },
