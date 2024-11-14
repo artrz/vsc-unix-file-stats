@@ -43,7 +43,7 @@
         "fileStats.size.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Displays the file size on the status bar"
+          "description": "Displays the file size on the status bar."
         },
         "fileStats.size.position": {
           "type": "string",
@@ -56,17 +56,17 @@
             "Align to the right"
           ],
           "default": "right",
-          "description": "Sets the position of the file size status item"
+          "description": "Sets the position of the file size status item."
         },
         "fileStats.size.priority": {
           "type": "number",
           "default": 0,
-          "description": "A higher number means nearer to the left"
+          "description": "A higher number means nearer to the left."
         },
         "fileStats.permissions.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Displays the file permissions on the status bar"
+          "description": "Displays the file permissions on the status bar."
         },
         "fileStats.permissions.position": {
           "type": "string",
@@ -79,12 +79,12 @@
             "Align to the right"
           ],
           "default": "right",
-          "description": "Sets the position of the file permissions status item"
+          "description": "Sets the position of the file permissions status item."
         },
         "fileStats.permissions.priority": {
           "type": "number",
           "default": 0,
-          "description": "A higher number means nearer to the left"
+          "description": "A higher number means nearer to the left."
         },
         "fileStats.permissions.format": {
           "type": "string",
@@ -97,12 +97,22 @@
             "Show permissions as letters"
           ],
           "default": "letters",
-          "description": "Sets the permissions format"
+          "description": "Sets the permissions format."
         },
         "fileStats.permissions.warnReadonly": {
           "type": "boolean",
           "default": true,
-          "description": "Shows the permissions menu item with a warning background when file in not writeable"
+          "description": "Shows the permissions menu item with a warning background when file in not writeable."
+        },
+        "fileStats.hints.basenameOnly": {
+          "type": "boolean",
+          "default": true,
+          "description": "Displays only the resource's basename when requesting the permissions."
+        },
+        "fileStats.hints.maxNames": {
+          "type": "integer",
+          "default": 5,
+          "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
         }
       }
     },
@@ -111,7 +121,22 @@
         "command": "unix-file-stats.changePermissions",
         "title": "Change file permissions"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceScheme == file && !explorerResourceIsFolder",
+          "command": "unix-file-stats.changePermissions",
+          "group": "7_modification@4"
+        }
+      ],
+        "commandPalette": [
+          {
+            "command": "unix-file-stats.changePermissions",
+            "when": "false"
+          }
+        ]
+      }
   },
   "scripts": {
     "init": "lefthook install",
@@ -133,23 +158,23 @@
     "publish": "git push origin main && git push --tags && vsce publish && npx ovsx publish"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.14.0",
     "@favware/cliff-jumper": "^5.0.0",
-    "@stylistic/eslint-plugin": "^2.8.0",
+    "@stylistic/eslint-plugin": "^2.10.1",
     "@types/eslint__js": "^8.42.3",
-    "@types/mocha": "^10.0.8",
-    "@types/node": "22.7.4",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "22.9.0",
     "@types/vscode": "1.70.0",
-    "@typescript-eslint/eslint-plugin": "^8.8.0",
-    "@typescript-eslint/parser": "^8.12.2",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
     "esbuild": "^0.24.0",
-    "eslint": "^9.11.1",
+    "eslint": "^9.14.0",
     "lefthook": "^1.8.2",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.13.0"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0"
   },
   "dependencies": {
     "sudo-prompt": "^9.2.1"

@@ -14,6 +14,10 @@ You can change the file permissions by clicking on the status item.
 
 ![Preview](resources/change_prompt.png)
 
+It's also possible to change the file permissions from the explorer tree by clicking in the added menu item 'Change file permissions'. This function supports multiple files. Directories are ignored.
+
+![Preview](resources/explorer_item.png)
+
 If changing permissions require superuser privileges, it's possible to try again with sudo.
 
 ![Preview](resources/sudo_retry.png)
@@ -31,6 +35,8 @@ This extension contributes the following settings:
 * `fileStats.permissions.priority`:     A higher number means nearer to the left.
 * `fileStats.permissions.format`:       Sets the permissions format (numeric or letters/-).
 * `fileStats.permissions.warnReadonly`: Shows the permissions menu item with a warning background when file in not writeable.
+* `fileStats.hints.basenameOnly`:       Displays only the resource's basename when requesting the permissions.
+* `fileStats.hints.maxNames`:           The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'
 
 ## Release Notes
 
