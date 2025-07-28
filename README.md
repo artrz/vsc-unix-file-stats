@@ -68,9 +68,9 @@ uses the commit messages to define the version change.
 ## Versioning and releasing
 
 Use `npm run bump` to increment the version and update the changelog and commit the changes. Internally,
-`bump` uses to automatize the process.
+`bump` uses cliff-jumper to automatize the process.
 
-To "undo" a bump, use `npm run debump [THE GENERATED TAG]` which undoes the commit and deletes the tag.
+To undo a bump, use `npm run debump [THE GENERATED TAG]` which undoes the commit and deletes the tag.
 
 Finally, run `npm run publish` to push the changes along with the new tag.
 Publishing will also upload the new version to vscode Marketplace and the Open VSX Registry.
