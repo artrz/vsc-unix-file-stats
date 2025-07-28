@@ -2,6 +2,7 @@
 
 Add file stats information in your editor status bar in Unix and Unix-like operating systems (tested on macOS Sonoma & Debian Sid).
 
+
 ## Features
 
  - Shows file permissions (file mode)
@@ -23,6 +24,7 @@ If changing permissions require superuser privileges, it's possible to try again
 ![Preview](resources/sudo_retry.png)
 ![Preview](resources/sudo_prompt.png)
 
+
 ## Extension Settings
 
 This extension contributes the following settings:
@@ -38,23 +40,27 @@ This extension contributes the following settings:
 * `fileStats.hints.basenameOnly`:       Displays only the resource's basename when requesting the permissions.
 * `fileStats.hints.maxNames`:           The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'
 
+
 ## Release Notes
 
 See the [changelog](./CHANGELOG.md).
+
 
 ## Contributing
 
 First of, thanks for your interest in helping out!
 
-This repository uses ESLint and [Stylistic](https://eslint.style/) to ensure the code quality. Lefthook is configured to automatically perform tasks on pre-commit and pre-push hooks. Execute `npm run prepare` to install the git hooks in your cloned repo. [Commitlint](https://commitlint.js.org/) is integrated as a github workflow to ensure consistent commit messages on PRs.
+Lefthook is configured to automatically perform tasks on pre-commit and pre-push hooks. To install the git hooks in your repo clone run `npm run prepare`, this way, [the configured hooks](./lefthook.yml) will be automatically executed.
 
-### Pre-commit
+There's also a [github workflow](./.github/workflows/semantic-pull-request.yml) to ensure consistent commit messages on PRs using [Commitlint](https://commitlint.js.org/).
 
-Before committing, eslint will run on staged files. If everything is ok, the commit messages will be linted too using the default conventional configuration. See [commitlint.config.mjs](./commitlint.config.mjs) for a cheat sheet on how to use the types or [https://cheatsheets.zip/conventional-commits](https://cheatsheets.zip/conventional-commits) for a detailed explanation.
 
-### Pre-push
+## Versioning and releasing
 
-Before pushing, a package audit is going to be performed to verify there are no risky packages as dependencies.
+Use `npm run bump` to increment the version and update the changelog and commit the changes.
+To "undo" a bump, use `npm run debump [THE GENERATED TAG]` which undoes the commit and deletes the tag.
+Finally, run `npm run publish` to push the changes along with the new tag and build the theme so it's ready to be uploaded.
+
 
 ## License
 
