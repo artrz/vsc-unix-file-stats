@@ -1,181 +1,185 @@
 {
-  "name": "unix-file-stats",
-  "displayName": "Unix File Stats",
-  "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
-  "publisher": "arturock",
-  "icon": "resources/logo.png",
-  "version": "0.3.0",
-  "license": "GPL-3.0",
-  "author": {
-    "name": "Arturo Rodríguez",
-    "url": "https://github.com/artrz"
-  },
-  "homepage": "https://github.com/artrz/vsc-unix-file-stats/blob/master/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/artrz/vsc-unix-file-stats"
-  },
-  "bugs": {
-    "url": "https://github.com/artrz/vsc-unix-file-stats/issues"
-  },
-  "categories": [
-    "Other"
-  ],
-  "keywords": [
-    "filesize",
-    "permissions",
-    "stats",
-    "unix",
-    "linux",
-    "multi-root ready"
-  ],
-  "engines": {
-    "vscode": "^1.70.0"
-  },
-  "activationEvents": [
-    "onFileSystem:file"
-  ],
-  "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "title": "Unix file stats",
-      "properties": {
-        "fileStats.size.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Displays the file size on the status bar."
-        },
-        "fileStats.size.position": {
-          "type": "string",
-          "enum": [
-            "left",
-            "right"
-          ],
-          "enumDescriptions": [
-            "Align to the left",
-            "Align to the right"
-          ],
-          "default": "right",
-          "description": "Sets the position of the file size status item."
-        },
-        "fileStats.size.priority": {
-          "type": "number",
-          "default": 0,
-          "description": "A higher number means nearer to the left."
-        },
-        "fileStats.permissions.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Displays the file permissions on the status bar."
-        },
-        "fileStats.permissions.position": {
-          "type": "string",
-          "enum": [
-            "left",
-            "right"
-          ],
-          "enumDescriptions": [
-            "Align to the left",
-            "Align to the right"
-          ],
-          "default": "right",
-          "description": "Sets the position of the file permissions status item."
-        },
-        "fileStats.permissions.priority": {
-          "type": "number",
-          "default": 0,
-          "description": "A higher number means nearer to the left."
-        },
-        "fileStats.permissions.format": {
-          "type": "string",
-          "enum": [
-            "numbers",
-            "letters"
-          ],
-          "enumDescriptions": [
-            "Show permissions as numbers",
-            "Show permissions as letters"
-          ],
-          "default": "letters",
-          "description": "Sets the permissions format."
-        },
-        "fileStats.permissions.warnReadonly": {
-          "type": "boolean",
-          "default": true,
-          "description": "Shows the permissions menu item with a warning background when file in not writeable."
-        },
-        "fileStats.hints.basenameOnly": {
-          "type": "boolean",
-          "default": true,
-          "description": "Displays only the resource's basename when requesting the permissions."
-        },
-        "fileStats.hints.maxNames": {
-          "type": "integer",
-          "default": 5,
-          "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
-        }
-      }
+    "name": "unix-file-stats",
+    "displayName": "Unix File Stats",
+    "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
+    "version": "0.3.0",
+    "publisher": "arturock",
+    "author": {
+        "name": "Arturo Rodríguez",
+        "url": "https://github.com/artrz"
     },
-    "commands": [
-      {
-        "command": "unix-file-stats.changePermissions",
-        "title": "Change file permissions..."
-      }
+    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/artrz/vsc-unix-file-stats/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/artrz/vsc-unix-file-stats"
+    },
+    "bugs": {
+        "url": "https://github.com/artrz/vsc-unix-file-stats/issues"
+    },
+    "categories": [
+        "Other"
     ],
-    "menus": {
-      "explorer/context": [
-        {
-          "when": "resourceScheme == file && !explorerResourceIsFolder",
-          "command": "unix-file-stats.changePermissions",
-          "group": "7_modification@4"
+    "keywords": [
+        "filesize",
+        "permissions",
+        "stats",
+        "unix",
+        "linux",
+        "multi-root ready"
+    ],
+    "icon": "resources/logo.png",
+    "galleryBanner": {
+        "color": "#045aa6",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "activationEvents": [
+        "onFileSystem:file"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "configuration": {
+        "title": "Unix file stats",
+        "properties": {
+            "fileStats.size.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Displays the file size on the status bar."
+            },
+            "fileStats.size.position": {
+            "type": "string",
+            "enum": [
+                "left",
+                "right"
+            ],
+            "enumDescriptions": [
+                "Align to the left",
+                "Align to the right"
+            ],
+            "default": "right",
+            "description": "Sets the position of the file size status item."
+            },
+            "fileStats.size.priority": {
+            "type": "number",
+            "default": 0,
+            "description": "A higher number means nearer to the left."
+            },
+            "fileStats.permissions.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Displays the file permissions on the status bar."
+            },
+            "fileStats.permissions.position": {
+            "type": "string",
+            "enum": [
+                "left",
+                "right"
+            ],
+            "enumDescriptions": [
+                "Align to the left",
+                "Align to the right"
+            ],
+            "default": "right",
+            "description": "Sets the position of the file permissions status item."
+            },
+            "fileStats.permissions.priority": {
+            "type": "number",
+            "default": 0,
+            "description": "A higher number means nearer to the left."
+            },
+            "fileStats.permissions.format": {
+            "type": "string",
+            "enum": [
+                "numbers",
+                "letters"
+            ],
+            "enumDescriptions": [
+                "Show permissions as numbers",
+                "Show permissions as letters"
+            ],
+            "default": "letters",
+            "description": "Sets the permissions format."
+            },
+            "fileStats.permissions.warnReadonly": {
+            "type": "boolean",
+            "default": true,
+            "description": "Shows the permissions menu item with a warning background when file in not writeable."
+            },
+            "fileStats.hints.basenameOnly": {
+            "type": "boolean",
+            "default": true,
+            "description": "Displays only the resource's basename when requesting the permissions."
+            },
+            "fileStats.hints.maxNames": {
+            "type": "integer",
+            "default": 5,
+            "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
+            }
         }
-      ],
-      "commandPalette": [
+        },
+        "commands": [
         {
-          "command": "unix-file-stats.changePermissions",
-          "when": "false"
+            "command": "unix-file-stats.changePermissions",
+            "title": "Change file permissions..."
         }
-      ]
+        ],
+        "menus": {
+        "explorer/context": [
+            {
+            "when": "resourceScheme == file && !explorerResourceIsFolder",
+            "command": "unix-file-stats.changePermissions",
+            "group": "7_modification@4"
+            }
+        ],
+        "commandPalette": [
+            {
+            "command": "unix-file-stats.changePermissions",
+            "when": "false"
+            }
+        ]
+        }
+    },
+    "scripts": {
+        "init": "lefthook install",
+        "vscode:prepublish": "npm run package",
+        "compile": "npm run check-types && npm run lint && node esbuild.js",
+        "watch": "npm-run-all -p watch:*",
+        "watch:esbuild": "node esbuild.js --watch",
+        "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+        "package": "npm run check-types && npm run lint && node esbuild.js --production",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile && npm run lint",
+        "check-types": "tsc --noEmit",
+        "lint": "eslint src",
+        "lint:fix": "npm run lint -- --fix",
+        "test": "vscode-test",
+        "bump": "npm run lint && vsce package && npx @favware/cliff-jumper",
+        "debump": "git reset --soft HEAD~1 ; git tag --delete",
+        "publish": "git push origin main && git push --tags && vsce publish && npx ovsx publish"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.32.0",
+        "@favware/cliff-jumper": "^6.0.0",
+        "@stylistic/eslint-plugin": "^5.2.2",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "22.16.5",
+        "@types/vscode": "1.70.0",
+        "@typescript-eslint/eslint-plugin": "^8.38.0",
+        "@typescript-eslint/parser": "^8.38.0",
+        "@vscode/test-cli": "^0.0.11",
+        "@vscode/test-electron": "^2.5.2",
+        "esbuild": "^0.25.8",
+        "eslint": "^9.32.0",
+        "lefthook": "^1.12.2",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.38.0"
+    },
+    "dependencies": {
+        "sudo-prompt": "^9.2.1"
     }
-  },
-  "scripts": {
-    "init": "lefthook install",
-    "vscode:prepublish": "npm run package",
-    "compile": "npm run check-types && npm run lint && node esbuild.js",
-    "watch": "npm-run-all -p watch:*",
-    "watch:esbuild": "node esbuild.js --watch",
-    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
-    "package": "npm run check-types && npm run lint && node esbuild.js --production",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "check-types": "tsc --noEmit",
-    "lint": "eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "test": "vscode-test",
-    "bump": "npm run lint && vsce package && npx @favware/cliff-jumper",
-    "debump": "git reset --soft HEAD~1 ; git tag --delete",
-    "publish": "git push origin main && git push --tags && vsce publish && npx ovsx publish"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@favware/cliff-jumper": "^6.0.0",
-    "@stylistic/eslint-plugin": "^5.2.2",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.16.5",
-    "@types/vscode": "1.70.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2",
-    "esbuild": "^0.25.8",
-    "eslint": "^9.32.0",
-    "lefthook": "^1.12.2",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.38.0"
-  },
-  "dependencies": {
-    "sudo-prompt": "^9.2.1"
-  }
 }
