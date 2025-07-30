@@ -70,7 +70,7 @@ uses the commit messages to define the version change.
 Once you're in the main branch with all changes merged and ready to release a new version:
 
 Use `npm run bump` to increment the version and update the changelog and commit the changes. Internally,
-`bump` uses cliff-jumper to automatize the process.
+`bump` uses cliff-jumper to automatize the process. Notice this script also calls `vsce package`.
 
 To undo a bump, use `npm run debump [THE GENERATED TAG]` which undoes the commit and deletes the tag.
 
