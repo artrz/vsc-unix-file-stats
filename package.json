@@ -2,7 +2,7 @@
     "name": "unix-file-stats",
     "displayName": "Unix File Stats",
     "description": "Show file stats (size and permissions) on the statusbar for unix like systems.",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "arturock",
     "author": {
         "name": "Arturo Rodríguez",
@@ -42,104 +42,104 @@
     "main": "./dist/extension.js",
     "contributes": {
         "configuration": {
-        "title": "Unix file stats",
-        "properties": {
-            "fileStats.size.enabled": {
-            "type": "boolean",
-            "default": true,
-            "description": "Displays the file size on the status bar."
-            },
-            "fileStats.size.position": {
-            "type": "string",
-            "enum": [
-                "left",
-                "right"
-            ],
-            "enumDescriptions": [
-                "Align to the left",
-                "Align to the right"
-            ],
-            "default": "right",
-            "description": "Sets the position of the file size status item."
-            },
-            "fileStats.size.priority": {
-            "type": "number",
-            "default": 0,
-            "description": "A higher number means nearer to the left."
-            },
-            "fileStats.permissions.enabled": {
-            "type": "boolean",
-            "default": true,
-            "description": "Displays the file permissions on the status bar."
-            },
-            "fileStats.permissions.position": {
-            "type": "string",
-            "enum": [
-                "left",
-                "right"
-            ],
-            "enumDescriptions": [
-                "Align to the left",
-                "Align to the right"
-            ],
-            "default": "right",
-            "description": "Sets the position of the file permissions status item."
-            },
-            "fileStats.permissions.priority": {
-            "type": "number",
-            "default": 0,
-            "description": "A higher number means nearer to the left."
-            },
-            "fileStats.permissions.format": {
-            "type": "string",
-            "enum": [
-                "numbers",
-                "letters"
-            ],
-            "enumDescriptions": [
-                "Show permissions as numbers",
-                "Show permissions as letters"
-            ],
-            "default": "letters",
-            "description": "Sets the permissions format."
-            },
-            "fileStats.permissions.warnReadonly": {
-            "type": "boolean",
-            "default": true,
-            "description": "Shows the permissions menu item with a warning background when file in not writeable."
-            },
-            "fileStats.hints.basenameOnly": {
-            "type": "boolean",
-            "default": true,
-            "description": "Displays only the resource's basename when requesting the permissions."
-            },
-            "fileStats.hints.maxNames": {
-            "type": "integer",
-            "default": 5,
-            "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
+            "title": "Unix file stats",
+            "properties": {
+                "fileStats.size.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Displays the file size on the status bar."
+                },
+                "fileStats.size.position": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "enumDescriptions": [
+                        "Align to the left",
+                        "Align to the right"
+                    ],
+                    "default": "right",
+                    "description": "Sets the position of the file size status item."
+                },
+                "fileStats.size.priority": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "A higher number means nearer to the left."
+                },
+                "fileStats.permissions.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Displays the file permissions on the status bar."
+                },
+                "fileStats.permissions.position": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "enumDescriptions": [
+                        "Align to the left",
+                        "Align to the right"
+                    ],
+                    "default": "right",
+                    "description": "Sets the position of the file permissions status item."
+                },
+                "fileStats.permissions.priority": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "A higher number means nearer to the left."
+                },
+                "fileStats.permissions.format": {
+                    "type": "string",
+                    "enum": [
+                        "numbers",
+                        "letters"
+                    ],
+                    "enumDescriptions": [
+                        "Show permissions as numbers",
+                        "Show permissions as letters"
+                    ],
+                    "default": "letters",
+                    "description": "Sets the permissions format."
+                },
+                "fileStats.permissions.warnReadonly": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Shows the permissions menu item with a warning background when file in not writeable."
+                },
+                "fileStats.hints.basenameOnly": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Displays only the resource's basename when requesting the permissions."
+                },
+                "fileStats.hints.maxNames": {
+                    "type": "integer",
+                    "default": 5,
+                    "description": "The maximum names to display when requesting the permissions. If more items than this value are selected, they will appear as ' and X more'."
+                }
             }
-        }
         },
         "commands": [
-        {
-            "command": "unix-file-stats.changePermissions",
-            "title": "Change file permissions..."
-        }
+            {
+                "command": "unix-file-stats.changePermissions",
+                "title": "Change file permissions..."
+            }
         ],
         "menus": {
-        "explorer/context": [
-            {
-            "when": "resourceScheme == file && !explorerResourceIsFolder",
-            "command": "unix-file-stats.changePermissions",
-            "group": "7_modification@4"
-            }
-        ],
-        "commandPalette": [
-            {
-            "command": "unix-file-stats.changePermissions",
-            "when": "false"
-            }
-        ]
+            "explorer/context": [
+                {
+                    "when": "resourceScheme == file && !explorerResourceIsFolder",
+                    "command": "unix-file-stats.changePermissions",
+                    "group": "7_modification@4"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "unix-file-stats.changePermissions",
+                    "when": "false"
+                }
+            ]
         }
     },
     "scripts": {
