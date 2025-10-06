@@ -8,7 +8,7 @@ on:
 env:
   # These variables will be redefined
   GIT_TAG: 0.0.0
-  EXT_NAME: extension.vsix
+  EXT_NAME: unix-file-stats.vsix
 
 jobs:
   release:
@@ -19,7 +19,7 @@ jobs:
         run: echo "GIT_TAG=`echo ${GITHUB_REF_NAME} | cut -c2-`" >> $GITHUB_ENV
 
       - name: Set the extension filename
-        run: echo "EXT_NAME=gitstash-${GIT_TAG}.vsix" >> $GITHUB_ENV
+        run: echo "EXT_NAME=unix-file-stats-${GIT_TAG}.vsix" >> $GITHUB_ENV
 
       - name: File to process
         run: echo "*** $EXT_NAME ***"
