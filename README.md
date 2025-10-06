@@ -5,6 +5,8 @@
 [![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/arturock.unix-file-stats?color=f2266e&label=VS%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
 [![Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/arturock.unix-file-stats?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
 [![Marketplace Rating](https://img.shields.io/visual-studio-marketplace/stars/arturock.unix-file-stats?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
+<br>
+[![Release](https://github.com/artrz/vsx-unix-file-stats/actions/workflows/release-version.yml/badge.svg)](https://github.com/artrz/vsx-unix-file-stats/actions/workflows/release-version.yml)
 
 [![Sponsoring](https://img.shields.io/badge/-black?style=social&logo=&label=☕%20%20%20Buy%20me%20a%20Coffee)](https://ko-fi.com/artrz)
 <br>
