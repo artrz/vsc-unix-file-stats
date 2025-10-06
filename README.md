@@ -1,6 +1,6 @@
-# unix-file-stats
+# Unix File Stats
 
-Add file stats information in your editor status bar in Unix and Unix-like operating systems (tested on macOS Sonoma & Debian Sid).
+> Add file stats information in your editor status bar in Unix and Unix-like operating systems (tested on macOS Sonoma/Sequoia & Debian Sid).
 
 [![Version](https://vsmarketplacebadges.dev/version-short/arturock.unix-file-stats.svg?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
 [![Downloads](https://vsmarketplacebadges.dev/downloads-short/arturock.unix-file-stats.svg?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
@@ -12,20 +12,20 @@ Add file stats information in your editor status bar in Unix and Unix-like opera
  - Shows file size
  - Allow to change file permissions (with sudo retry support)
 
-After installing, the file size and permissions for the current file will appear as a new statusbar item ![Preview](resources/stats_1.png). If file is readonly, the item background will change ![Preview](resources/stats_2.png).
+After installing, the file size and permissions for the current file will appear as a new statusbar item ![Preview](resources/docs/stats_1.png). If file is readonly, the item background will change ![Preview](resources/docs/stats_2.png).
 
 You can change the file permissions by clicking on the status item.
 
-![Preview](resources/change_prompt.png)
+![Preview](resources/docs/change_prompt.png)
 
 It's also possible to change the file permissions from the explorer tree by clicking in the added menu item 'Change file permissions'. This function supports multiple files. Directories are ignored.
 
-![Preview](resources/explorer_item.png)
+![Preview](resources/docs/explorer_item.png)
 
 If changing permissions require superuser privileges, it's possible to try again with sudo.
 
-![Preview](resources/sudo_retry.png)
-![Preview](resources/sudo_prompt.png)
+![Preview](resources/docs/sudo_retry.png)
+![Preview](resources/docs/sudo_prompt.png)
 
 
 ## Extension Settings
