@@ -6,6 +6,11 @@
 [![Downloads](https://vsmarketplacebadges.dev/downloads-short/arturock.unix-file-stats.svg?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
 [![Rating Star](https://vsmarketplacebadges.dev/rating-star/arturock.unix-file-stats.svg?color=f2266e)](https://marketplace.visualstudio.com/items?itemName=arturock.unix-file-stats)
 
+[![Sponsoring](https://img.shields.io/badge/-black?style=social&logo=&label=☕%20%20%20Buy%20me%20a%20Coffee)](https://ko-fi.com/artrz)
+<br>
+Is this extension helpful for you? I kindly ask you to consider supporting me if you're able to, it will mean the world to me ❤️. Regardless, happy coding!
+
+
 ## Features
 
  - Shows file permissions (file mode)
