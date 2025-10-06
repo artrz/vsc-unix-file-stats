@@ -161,22 +161,21 @@
         "pub:release": "git push origin main && git push --tags"
     },
     "devDependencies": {
-        "@eslint/js": "^9.32.0",
+        "@eslint/js": "^9.37.0",
         "@favware/cliff-jumper": "^6.0.0",
-        "@stylistic/eslint-plugin": "^5.2.2",
+        "@stylistic/eslint-plugin": "^5.4.0",
         "@types/mocha": "^10.0.10",
-        "@types/node": "^22.17.0",
-        "@types/vscode": "1.70.0",
-        "@typescript-eslint/eslint-plugin": "^8.38.0",
-        "@typescript-eslint/parser": "^8.38.0",
+        "@types/node": "~22.17.2",
+        "@types/vscode": "~1.70.0",
+        "@typescript-eslint/eslint-plugin": "^8.45.0",
+        "@typescript-eslint/parser": "^8.45.0",
         "@vscode/test-cli": "^0.0.11",
         "@vscode/test-electron": "^2.5.2",
-        "esbuild": "^0.25.8",
-        "eslint": "^9.32.0",
-        "lefthook": "^1.12.2",
-        "npm-run-all": "^4.1.5",
-        "typescript": "^5.8.3",
-        "typescript-eslint": "^8.38.0"
+        "esbuild": "^0.25.10",
+        "eslint": "^9.37.0",
+        "lefthook": "^1.13.6",
+        "typescript": "~5.8.3",
+        "typescript-eslint": "^8.45.0"
     },
     "dependencies": {
         "sudo-prompt": "^9.2.1"
