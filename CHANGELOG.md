@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Do not bundle doc images (#78)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.4.0..v0.5.0](https://github.com/artrz/vsc-unix-file-stats/compare/v0.4.0..v0.5.0)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.4.0..v0.5.0](https://github.com/artrz/vsx-unix-file-stats/compare/v0.4.0..v0.5.0)
 
 ## [0.4.0] - 2025-07-30
 
@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update @types/node dep
 - Update readme
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.3.0..v0.4.0](https://github.com/artrz/vsc-unix-file-stats/compare/v0.3.0..v0.4.0)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.3.0..v0.4.0](https://github.com/artrz/vsx-unix-file-stats/compare/v0.3.0..v0.4.0)
 
 ## [0.3.0] - 2025-07-28
 
@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump @typescript-eslint/parser from 8.14.0 to 8.21.0 (#54)
 - Update dependencies (#69)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.2.0..v0.3.0](https://github.com/artrz/vsc-unix-file-stats/compare/v0.2.0..v0.3.0)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.2.0..v0.3.0](https://github.com/artrz/vsx-unix-file-stats/compare/v0.2.0..v0.3.0)
 
 ## [0.2.0] - 2024-11-14
 
@@ -53,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump @favware/cliff-jumper from 4.1.0 to 5.0.0 (#36)
 - Allow to change permissions from the explorer menu (#43)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.8..v0.2.0](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.8..v0.2.0)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.8..v0.2.0](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.8..v0.2.0)
 
 ## [0.1.8] - 2024-10-02
 
@@ -71,7 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update dependencies
 - Set min vscode required version to 1.70.0
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.7..v0.1.8](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.7..v0.1.8)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.7..v0.1.8](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.7..v0.1.8)
 
 ## [0.1.7] - 2024-09-10
 
@@ -86,7 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump @favware/cliff-jumper from 4.0.3 to 4.1.0 (#25)
 - Improve npm scripts
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.7](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.7)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.6..v0.1.7](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.6..v0.1.7)
 
 ## [0.1.6] - 2024-08-20
 
@@ -94,7 +94,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove unused code; update dependecies, logo and readme (#23)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.5..v0.1.6](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.5..v0.1.6)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.5..v0.1.6](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.5..v0.1.6)
 
 ## [0.1.5] - 2024-08-06
 
@@ -102,7 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improve bumping script (#22)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.5](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.6..v0.1.5)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.6..v0.1.5](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.6..v0.1.5)
 
 ## [0.1.6] - 2024-08-05
 
@@ -112,7 +112,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump @typescript-eslint/eslint-plugin (#20)
 - Bump typescript-eslint from 7.18.0 to 8.0.1 (#21)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.4..v0.1.6](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.4..v0.1.6)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.4..v0.1.6](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.4..v0.1.6)
 
 ## [0.1.4] - 2024-08-05
 
@@ -121,7 +121,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump @types/node from 20.14.13 to 20.14.14 (#18)
 - Change interval to monthly
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.3..v0.1.4](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.3..v0.1.4)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.3..v0.1.4](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.3..v0.1.4)
 
 ## [0.1.3] - 2024-08-05
 
@@ -134,7 +134,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix npm script `release`
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.2..v0.1.3](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.2..v0.1.3)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.2..v0.1.3](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.2..v0.1.3)
 
 ## [0.1.2] - 2024-08-02
 
@@ -144,7 +144,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update package.json
 - Improve extension information (#15)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.1..v0.1.2](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.1..v0.1.2)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.1..v0.1.2](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.1..v0.1.2)
 
 ## [0.1.1] - 2024-08-01
 
@@ -165,7 +165,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove commit linting hook (#13)
 
-[https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.0..v0.1.1](https://github.com/artrz/vsc-unix-file-stats/compare/v0.1.0..v0.1.1)
+[https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.0..v0.1.1](https://github.com/artrz/vsx-unix-file-stats/compare/v0.1.0..v0.1.1)
 
 ## [0.1.0] - 2023-11-12
 

@@ -9,13 +9,13 @@
         "url": "https://github.com/artrz"
     },
     "license": "GPL-3.0-only",
-    "homepage": "https://github.com/artrz/vsc-unix-file-stats/blob/master/README.md",
+    "homepage": "https://github.com/artrz/vsx-unix-file-stats/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/artrz/vsc-unix-file-stats"
+        "url": "https://github.com/artrz/vsx-unix-file-stats"
     },
     "bugs": {
-        "url": "https://github.com/artrz/vsc-unix-file-stats/issues"
+        "url": "https://github.com/artrz/vsx-unix-file-stats/issues"
     },
     "categories": [
         "Other"
